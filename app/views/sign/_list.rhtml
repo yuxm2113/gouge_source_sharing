@@ -1,0 +1,5 @@
+<% for sign in @signs %>
+<% @current =sign %>
+    <a href='/sign/show/<%= @current.id %>'><%= image_tag url_for_file_column("current","src","thumb"), 
+	:border=>'0'  %></a>
+<% end %>

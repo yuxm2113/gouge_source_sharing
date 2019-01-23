@@ -1,0 +1,7 @@
+<% @users =User.find(:all,:order=>'id DESC', :limit=>10)%>
+<ul class="links">
+	<% @users.each  do |u| %>
+		<li><a href="/u/<%=u.login%>">
+                <%=u.login%></a></li>
+                <% end %>
+</ul>

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Ruby on Rails: Welcome aboard</title>
+    <%= stylesheet_link_tag 'song'%>
+    <script type="text/javascript" src="javascripts/prototype.js"></script>
+    <script type="text/javascript" src="javascripts/effects.js"></script>
+    <script type="text/javascript">
+      function about() {
+        if (Element.empty('about-content')) {
+          new Ajax.Updater('about-content', 'rails/info/properties', {
+            method:     'get',
+            onFailure:  function() {Element.classNames('about-content').add('failure')},
+            onComplete: function() {new Effect.BlindDown('about-content', {duration: 0.25})}
+          });
+        } else {
+          new Effect[Element.visible('about-content') ? 
+            'BlindUp' : 'BlindDown']('about-content', {duration: 0.25});
+        }
+      }
+      
+      window.onload = function() {
+        $('search-text').value = '';
+        $('search').onsubmit = function() {
+          $('search-text').value = 'site:rubyonrails.org ' + $F('search-text');
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="sidebar">
+        <ul id="sidebar-items">
+          <li>
+            <div id="user_state"  class="user_state">
+              <%= render :partial => 'account/login' %>
+            </div>
+          </li>
+          <li>
+            <form id="search" action="http://www.google.com/search" method="get">
+              <input type="hidden" name="hl" value="en" />
+              <input type="text" id="search-text" name="q" value="site:rubyonrails.org " size="10" />
+              <input type="submit" value="Search" /> the Rails site
+            </form>
+          </li>
+          <li>
+            <h3>最新加入的用户...</h3>
+            <%= render :partial => 'account/list' %>
+          </li>
+          <li>
+            <h3>最新评论...</h3>
+            <ul class="links">
+              <li><a href="http://www.rubyonrails.org/">Ruby on Rails</a></li>
+              <li><a href="http://weblog.rubyonrails.org/">Official weblog</a></li>
+              <li><a href="http://lists.rubyonrails.org/">Mailing lists</a></li>
+              <li><a href="http://wiki.rubyonrails.org/rails/pages/IRC">IRC channel</a></li>
+              <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
+              <li><a href="http://dev.rubyonrails.org/">Bug tracker</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div id="content">
+        <div id="header">
+          <h1>符号网</h1>
+          <h2>生活中,到处都有符号!你发现了吗？</h2>
+        </div>
+        
+        <div id="about">
+          <h3>&nbsp;&nbsp;&nbsp;<a href="rails/info/properties" onclick="about(); return false">关于符号网的创意和作者</a></h3>
+          <div id="about-content" style="display: none"></div>
+        </div>
+        
+        <div id="getting-started">
+          <p style="color: green"><%= flash[:notice] %></p>
+          <%= yield  %>
+          <%= link_to '回到首页', :controller=>'index', :action => 'index' %> &nbsp;
+        </div>
+      </div>
+      
+      <div id="footer">&nbsp;符号网 版权所有</div>
+    </div>
+  </body>
+</html>

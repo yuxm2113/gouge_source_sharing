@@ -1,0 +1,22 @@
+<%= error_messages_for 'account' %>
+<% if  session[:user] != nil   -%>
+  <% u=User.find(session[:user]) %>
+  Hello: <%=u.login %><br/>
+  <a href="/account/logout" >Logout</a>&nbsp;&nbsp;
+  <a href="/u/" >进入我的符号网</a>
+<% else -%>
+  <%= form_tag( {:controller=>'account', :action => 'login' }) %> 
+  <p><label for="login">Login</label><br/>
+  <%= text_field_tag 'login' %></p>
+
+  <p><label for="password">Password</label><br/>
+  <%= password_field_tag 'password' %></p>
+
+  <p><label for="remember_me">Remember me:</label>
+  <%= check_box_tag 'remember_me' %></p>
+
+  <p><%= submit_tag 'Log in' %>&nbsp;&nbsp;&nbsp;
+<a href="/account/signup" >Signup</a>
+</p>
+<% end_form_tag %>
+<% end -%>

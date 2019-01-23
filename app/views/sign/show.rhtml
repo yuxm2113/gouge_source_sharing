@@ -1,0 +1,46 @@
+<h1><%= @sign.tags %></h1>
+<% if  session[:user] != nil   -%>
+  <%= link_to 'Edit', :action => 'edit', :id => @sign %> |
+  <%= link_to 'Back', :action => 'list' %><br/>
+<% end %>
+<%= image_tag url_for_file_column("sign","src") %><br/>
+<%=@sign.desc %>
+<hr/>
+<div id="opinion_form" class="opinion_form">
+  <% form_tag :controller=>'opinion',:action => 'create' do %>
+    <!--[form:opinion]-->
+    <%= hidden_field 'opinion','sign_id',:value=>@sign.id -%>
+    <p>给个评价:
+      <%= radio_button 'opinion','level','1',:checked=>'checked' %>&nbsp;好 &nbsp;&nbsp;
+      <%= radio_button(:opinion, :level, "2") %>&nbsp;一般 &nbsp;&nbsp;
+      <%= radio_button(:opinion, :level, "3") %>&nbsp;差 &nbsp;&nbsp;
+    
+    <%= text_area 'opinion', 'content',:cols=>50,:rows=>5  %></p>
+    <!--[eoform:opinion]-->
+    <%= submit_tag "Ok" %>
+  <% end %>
+</div>
+<div id="opinion_list" class="opinion_list">
+  <h1>评论列表...</h1>
+  <% @count=1 -%>
+  <% for opinion in @opinions -%>
+    <div id="inner_opinion" class="inner_opinion">
+      <%= @count%>. <%= opinion.content%><br/>
+      <% if  session[:user] != nil %>
+        <%= link_to 'Edit', :controller=>'opinion', :action => 'edit', :id => opinion %>
+        <%= link_to 'Destroy', {:controller=>'opinion',  :action => 'destroy', :id => opinion }, :confirm => 'Are you sure?', :method => :post %>
+      <% end %>
+    </div>
+     <% @count= @count+1 %>
+    <% end %>
+  </table>
+  
+  <%= link_to '上一页', { :page => @opinion_pages.current.previous } if @opinion_pages.current.previous %>
+  <%= pagination_links(@opinion_pages) %>
+  <%= link_to '下一页', { :page => @opinion_pages.current.next } if @opinion_pages.current.next %> 
+  
+  <br />
+  <div id='new_button' class='new_button'>
+    <%= link_to '新符号', :action => 'new' %>
+  </div>
+</div>

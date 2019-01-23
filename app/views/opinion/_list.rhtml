@@ -1,0 +1,17 @@
+<% @opinions= Opinion.find(params[:id],:order=>'id DESC') %>
+
+<% for opinion in @opinions %>
+  <tr>
+  <% for column in Opinion.content_columns %>
+    <td><%=h opinion.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => opinion %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => opinion %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => opinion }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<%= link_to 'New opinion', :action => 'new' %>

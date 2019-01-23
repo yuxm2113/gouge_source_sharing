@@ -1,0 +1,9 @@
+<h1>Editing opinion</h1>
+
+<% form_tag :action => 'update', :id => @opinion do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @opinion %> |
+<%= link_to 'Back', :action => 'list' %>

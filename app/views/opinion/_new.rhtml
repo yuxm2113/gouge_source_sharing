@@ -1,0 +1,14 @@
+<h1>New opinion</h1>
+
+<% form_tag :controller=>'opinion',:action => 'create' do %>
+  <!--[form:opinion]-->
+  <p><label for="opinion_content">Content</label><br/>
+  <%= text_area 'opinion', 'content',:cols=>50,:rows=>5  %></p>
+  <input name="type" type="radio" value="1" checked="checked"/>&nbsp;好 &nbsp;&nbsp;<input name="type" type="radio" value="2" />&nbsp;一般 &nbsp;&nbsp;<input name="type" type="radio" value="3"/>&nbsp;差&nbsp;&nbsp;
+  <p><label for="opinion_created_at">Created at</label><br/>
+  <%= datetime_select 'opinion', 'created_at'  %></p>
+  <!--[eoform:opinion]-->
+  <%= submit_tag "Create" %>
+<% end %>
+
+<%= link_to 'Back', :action => 'list' %>

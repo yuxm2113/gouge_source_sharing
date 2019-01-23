@@ -1,0 +1,26 @@
+<%= link_to '返回首页', :controller=>'index', :action => 'index' %>
+<%= link_to 'New sign', :controller=>'sign', :action => 'new' %>
+
+<h1>符号列表...</h1>
+
+<% for sign in @signs %>
+  <% @current =sign %>
+  <div id="sign_image">
+    <a href='/sign/show/<%= @current.id %>'><%= image_tag url_for_file_column("current","src","medium"),
+      :alt=> @current.src, :border=>'0', :align=>'center' %></a>
+  </div>
+  <div id="sign_list">
+    <span style="color:orange;">符号描述:</span><%= @current.desc%>
+    <% if session[:user] != nil %>
+      <%= link_to 'Edit', :action => 'edit', :id => sign %>
+      <%= link_to 'Destroy', { :action => 'destroy', :id => sign }, :confirm => 'Are you sure?', :method => :post %>
+    <% end %>
+  </div>
+<% end %>
+<br/>
+<%= link_to 'Previous page', { :page => @sign_pages.current.previous } if @sign_pages.current.previous %>
+<%= link_to 'Next page', { :page => @sign_pages.current.next } if @sign_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New sign', :action => 'new' %>

@@ -1,0 +1,20 @@
+<h1>最新符号/签名...</h1>
+<%= render :partial => 'sign/list' %>
+<%= link_to '浏览更多...', :controller=>'sign', :action => 'list' %>
+<br/><br/>..你可以<a href='/account/signup'>注册</a>或<a href='/account/login'>登录</a>后<a href='/sign/new'>上传符号</a>，也可以先了解一下<a href='/post/show/1'>符号的奥妙...</a>
+<ol>
+  <li>
+    <h2><b>符号网新闻频道...</b></h2>
+    <p> <%= yield %></p>
+  </li>
+  
+  <li>
+    <h2>Use <tt>script/generate</tt> to create your models and controllers</h2>
+    <p>To see all available options, run it without parameters.</p>
+  </li>
+  
+  <li>
+    <h2>Set up a default route and remove or rename this file</h2>
+    <p>Routes are setup in config/routes.rb.</p>
+  </li>
+</ol>

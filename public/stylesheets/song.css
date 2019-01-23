@@ -1,0 +1,250 @@
+      body {
+	margin: 0;
+	margin-bottom: 25px;
+	padding: 0;
+	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+	font-size: 13px;
+	color: #333;
+	background-image: url("../images/index_bg.gif");
+	background-repeat: repeat-x;
+	background-position: left top;
+      }
+      
+      h1 {
+        font-size: 28px;
+        color: #000;
+      }
+      
+      a  {color: #03c}
+      a:hover {
+        background-color: #03c;
+        color: white;
+        text-decoration: none;
+      }
+      
+      
+      #page {
+	background-color: #f0f0f0;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-image: url("../images/index_bg.gif");
+	background-repeat: repeat-x;
+	background-position: left top;
+	margin-top: 0;
+	margin-bottom: 0;
+	float: left;
+	padding: 0px;
+      }
+      
+      #content {
+	float: right;
+	background-color: white;
+	width: 550px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 0px;
+	margin-left: 0px;
+	border-top-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 3px;
+	border-left-width: 3px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #aaa;
+	border-right-color: #aaa;
+	border-bottom-color: #aaa;
+	border-left-color: #aaa;
+      }
+.inner_opinion {
+	background-color: #E9F1F5;
+	padding: 4px;
+	border: 1px solid #CCCCCC;
+	margin-bottom: 4px;
+}
+#sign_list{
+    background-color: #efe;
+    padding-top: 4px;
+    margin-top: 20px;
+    border: 1px solid #CCCCCC;
+}
+#sub_page {
+	width: 400px;
+	margin-top: 10%;
+	border: 1px solid #CCCCCC;
+	background-color: #efe;
+}
+    #sign_image{
+        float:left;
+    background-color: #fff;
+    padding: 8px;
+    margin-top: 20px;
+    border: 1px solid #CCCCCC;
+    }  
+      #sidebar {
+	float: left;
+	width: 175px;
+	margin-left: 20px;
+	margin-right: 0px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	border: medium none #B2B2B2;
+      }
+
+      #footer {
+        clear: both;
+      }
+      
+
+      #header, #about, #getting-started {
+        padding-left: 75px;
+        padding-right: 30px;
+      }
+
+
+      #header {
+	background-image: url("../images/rails.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+	height: 64px;
+	margin-left: 30px;
+      }
+      #header h1, #header h2 {margin: 0}
+      #header h2 {
+        color: #888;
+        font-weight: normal;
+        font-size: 16px;
+      }
+      
+      
+      #about h3 {
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+      
+      #about-content {
+        background-color: #ffd;
+        border: 1px solid #fc0;
+        margin-left: -11px;
+      }
+      #about-content table {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 11px;
+        border-collapse: collapse;
+      }
+      #about-content td {
+        padding: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+      #about-content td.name  {color: #555}
+      #about-content td.value {color: #000}
+      
+      #about-content.failure {
+        background-color: #fcc;
+        border: 1px solid #f00;
+      }
+      #about-content.failure p {
+        margin: 0;
+        padding: 10px;
+      }
+      
+      
+      #getting-started {
+	border-top: 1px solid #ccc;
+	padding: 10px;
+      }
+      #getting-started h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+      #getting-started h2 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: normal;
+        color: #333;
+        margin-bottom: 25px;
+      }
+      #getting-started ol {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      #getting-started li {
+        font-size: 18px;
+        color: #888;
+        margin-bottom: 25px;
+      }
+      #getting-started li h2 {
+        margin: 0;
+        font-weight: normal;
+        font-size: 18px;
+        color: #333;
+      }
+      #getting-started li p {
+        color: #555;
+        font-size: 13px;
+      }
+      
+      
+      #search {
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 11px;
+      }
+      #search input {
+        font-size: 11px;
+        margin: 2px;
+      }
+      #search-text {width: 170px}
+      
+      
+      #sidebar ul {
+        margin-left: 0;
+        padding-left: 0;
+      }
+#user_state {
+	background-color: #D4D0C8;
+	border: 1px solid #FFFFFF;
+	padding-left: 10px;
+}
+#user_state input{
+	border: 1px solid #0099CC;
+	background-color: #FFFFFF;
+}
+#user_menu {
+	background-color: #D4D0C8;
+	border: 1px solid #FFFFFF;
+	padding-left: 10px;
+}
+      #sidebar ul h3 {
+	margin-top: 25px;
+	font-size: 16px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+	text-align: right;
+      }
+      #sidebar li {
+        list-style-type: none;
+      }
+      #sidebar ul.links li {
+        margin-bottom: 5px;
+      }
+      .state{
+	color: #FFFFFF;
+      }
+      .white{
+	color :#FFFFFF;
+      }
+      input {
+	background-color: #CCCCCC;
+	border: 1px solid #0066FF;
+	height: 20px;
+	}

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Ruby on Rails: Welcome aboard</title>
+    <%= stylesheet_link_tag 'song'%>
+    
+  </head>
+  <body>
+    <div id="page">
+      <div id="sidebar">
+        <ul id="sidebar-items">
+          <li>
+            <div id="user_state"  class="user_state">
+              <%= render :partial => 'account/login' %>
+            </div>
+            <div id="user_menu"  class="user_menu">
+              <%= link_to '个人设置', :controller=>'u', :action => 'edit',:id=>@u%>
+              <%= link_to '我的符号', :controller=>'u', :action => 'show' %>
+              <%= link_to '...', :controller=>'u', :action => 'show' %>
+            </div>
+          </li>
+          <li>
+            <form id="search" action="http://www.google.com/search" method="get">
+              <input type="hidden" name="hl" value="en" />
+              <input type="text" id="search-text" name="q" value="site:rubyonrails.org " size="10" />
+              <input type="submit" value="Search" /> the Rails site
+            </form>
+          </li>
+          <li>
+            <h3>Top 10 Users</h3>
+            <%= render :partial => 'account/list' %>
+          </li>
+          <li>
+            <h3>Join the community</h3>
+            <ul class="links">
+              <li><a href="http://www.rubyonrails.org/">Ruby on Rails</a></li>
+              <li><a href="http://weblog.rubyonrails.org/">Official weblog</a></li>
+              <li><a href="http://lists.rubyonrails.org/">Mailing lists</a></li>
+              <li><a href="http://wiki.rubyonrails.org/rails/pages/IRC">IRC channel</a></li>
+              <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
+              <li><a href="http://dev.rubyonrails.org/">Bug tracker</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <h3>Browse the documentation</h3>
+            <ul class="links">
+              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
+              <li><a href="http://stdlib.rubyonrails.org/">Ruby standard library</a></li>
+              <li><a href="http://corelib.rubyonrails.org/">Ruby core</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <div id="content">
+        <div id="header">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td rowspan="2" width="100"><img src="/images/song.png" alt="tt"/></td>
+              <td><h1><%= @u.login%></h1></td>
+            </tr>
+            <tr>
+              <td><h2><%= @u.email%></h2></td>
+            </tr>
+          </table>
+        </div>
+        
+        <div id="about">
+          <h3>&nbsp;&nbsp;&nbsp;<a href="rails/info/properties" onclick="about(); return false">关于符号网的创意和作者</a></h3>
+          <div id="about-content" style="display: none"></div>
+        </div>
+        
+        <div id="getting-started">
+          <p style="color: green"><%= flash[:notice] %></p>
+          <%= yield  %>
+          <%= link_to '回到首页', :controller=>'index', :action => 'index' %> &nbsp;
+        </div>
+      </div>
+      
+      <div id="footer">&nbsp;符号网 版权所有</div>
+    </div>
+  </body>
+</html>

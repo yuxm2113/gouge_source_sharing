@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Ruby on Rails: Welcome aboard</title>
+     <%= stylesheet_link_tag 'song'%>
+    <script type="text/javascript" src="javascripts/prototype.js"></script>
+    <script type="text/javascript" src="javascripts/effects.js"></script>
+    <script type="text/javascript">
+      function about() {
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+    <div id="page">
+      <div class="sub_page" id="sub_page">
+       <%= yield %>
+      </div>
+   </div>
+    </center>
+  </body>
+</html>
